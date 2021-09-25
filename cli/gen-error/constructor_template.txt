@@ -1,0 +1,21 @@
+package errors
+
+type GMOPSError interface {
+	Error() string
+	Message() string
+	Code() string
+	CanRetry() bool
+}
+
+// NewErrors converts GMO-PS errors to Struct
+// Examples:
+//		["CT0009", "CT0035"]
+func NewErrors(errInfos ...string) []GMOPSError {
+	errs := make([]GMOPSError, 0, len(errInfos))
+	for _, info := range errInfos {
+		switch info {
+            {{.}}
+		}
+	}
+	return errs
+}
